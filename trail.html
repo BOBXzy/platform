@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Apricot 1.3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=29464802318093abe446439f09cefb4c"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <!--datetime picker -->
+    <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <script src="assets/js/datatimepicker/moment-with-locales.js"></script>
+    <script src="assets/js/datatimepicker/bootstrap-datetimepicker.js"></script>
+    <style>
+        .RightTool{
+            position: absolute;
+            height: 91%;
+            width: 20%;
+            border-left: 1px solid #dddddd;
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+            display: inline-block;
+        }
+        .trailtip{
+            display: inline-block;
+            border:1px solid transparent;
+            border-radius: 4px;
+            font-weight: normal;
+            line-height: 1.428571429;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            background: #A8BDCF;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- TOP NAVBAR -->
+<nav role="navigation" class="navbar navbar-static-top">
+    <div class="container-fluid">
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+
+
+            <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img alt="" class="admin-pic img-circle" src="assets/img/head.JPG">Hi, Zhiyu <b class="caret"></b>
+                    </a>
+                    <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <span class="entypo-user"></span>&#160;&#160;My Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="http://themeforest.net/item/apricot-navigation-admin-dashboard-template/7664475?WT.ac=category_item&WT.z_author=themesmile">
+                                <span class="entypo-basket"></span>&#160;&#160; Purchase</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+
+                    <ul role="menu" class="dropdown-setting dropdown-menu">
+
+                        <li class="theme-bg">
+                            <div id="button-bg"></div>
+                            <div id="button-bg2"></div>
+                            <div id="button-bg3"></div>
+                            <div id="button-bg5"></div>
+                            <div id="button-bg6"></div>
+                            <div id="button-bg7"></div>
+                            <div id="button-bg8"></div>
+                            <div id="button-bg9"></div>
+                            <div id="button-bg10"></div>
+                            <div id="button-bg11"></div>
+                            <div id="button-bg12"></div>
+                            <div id="button-bg13"></div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hidden-xs">
+                    <a class="toggle-left" href="#">
+                        <span style="font-size:20px;" class="entypo-list-add"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- /END OF TOP NAVBAR -->
+
+<!-- SIDE MENU -->
+<!-- SIDE MENU -->
+<div id="skin-select">
+    <div id="logo">
+        <h1>YoRoad<span style="margin-left:10%">v1.0</span></h1>
+    </div>
+
+    <a id="toggle">
+        <span class="entypo-menu"></span>
+    </a>
+    <div class="dark">
+        <form action="#">
+                <span>
+                    <input type="text" name="search" value="" class="search rounded id_search" placeholder="Search Menu..." autofocus="">
+                </span>
+        </form>
+    </div>
+
+    <div class="search-hover">
+        <form id="demo-2">
+            <input type="search" placeholder="Search Menu..." class="id_search">
+        </form>
+    </div>
+
+
+
+
+    <div class="skin-part">
+        <div id="tree-wrap">
+            <div class="side-bar">
+                <ul class="topnav menu-left-nest">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span>&nbsp;App&nbsp;&nbsp;管理&nbsp;</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="#" title="Blog App">
+                            <i class="icon-document-edit"></i>
+                            <span>司机管理</span>
+
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="blog-list.html" title="Blog List"><i class="entypo-doc-text"></i><span>司机信息查看</span></a>
+                            </li>
+                            <li>
+                                <a class="tooltip-tip2 ajax-load" href="blog-detail.html" title="Blog Detail"><i class="entypo-newspaper"></i><span>司机审核</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="social.html" title="Social">
+                            <i class="icon-feed"></i>
+                            <span>乘客管理</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="media.html" title="Media">
+                            <i class="icon-camera"></i>
+                            <span>订单管理</span>
+
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="topnav menu-left-nest">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span>&nbsp;后台运维&nbsp;</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="index.html" title="Dashboard">
+                            <i class="icon-window"></i>
+                            <span>实时分布</span>
+
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="map.html" title="Icons">
+                            <i class="icon-preview"></i>
+                            <span>系统派车</span>
+
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a class="tooltip-tip " href="trail.html" title="轨迹查询">
+                            <i class="icon-download"></i>
+                            <span>查询轨迹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="mail.html" title="Mail">
+                            <i class="icon-mail"></i>
+                            <span>投诉建议</span>
+                            <div class="noft-purple">3</div>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul id="menu-showhide" class="topnav menu-left-nest">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span>数据挖掘</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="tooltip-tip" href="#" title="UI Element">
+                            <i class="icon-monitor"></i>
+                            <span>用户分析</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="Form">
+                            <i class="icon-document"></i>
+                            <span>订单分析</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="tooltip-tip" href="#" title="Tables">
+                            <i class="icon-view-thumb"></i>
+                            <span>热点区域分析</span>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="map.html" title="Map">
+                            <i class="icon-location"></i>
+                            <span>各地流量分析</span>
+
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div class="side-dash">
+                    <h3>
+                        <span>Device</span>
+                    </h3>
+                    <ul class="side-dashh-list">
+                        <li>Avg. Traffic
+                            <span>25k<i style="color:#44BBC1;" class="fa fa-arrow-circle-up"></i>
+                                </span>
+                        </li>
+                        <li>Visitors
+                            <span>80%<i style="color:#AB6DB0;" class="fa fa-arrow-circle-down"></i>
+                                </span>
+                        </li>
+                        <li>Convertion Rate
+                            <span>13m<i style="color:#19A1F9;" class="fa fa-arrow-circle-up"></i>
+                                </span>
+                        </li>
+                    </ul>
+                    <h3>
+                        <span>Traffic</span>
+                    </h3>
+                    <ul class="side-bar-list">
+                        <li>Avg. Traffic
+                            <div class="linebar">5,7,8,9,3,5,3,8,5</div>
+                        </li>
+                        <li>Visitors
+                            <div class="linebar2">9,7,8,9,5,9,6,8,7</div>
+                        </li>
+                        <li>Convertion Rate
+                            <div class="linebar3">5,7,8,9,3,5,3,8,5</div>
+                        </li>
+                    </ul>
+                    <h3>
+                        <span>Visitors</span>
+                    </h3>
+                    <div id="g1" style="height:180px" class="gauge"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END OF SIDE MENU -->
+
+
+    <!--  PAPER WRAP -->
+    <div class="wrap-fluid">
+        <div class="container-fluid paper-wrap bevel tlbr">
+
+
+
+
+
+            <!-- CONTENT -->
+            <!--TITLE -->
+            <div class="row">
+                <div id="paper-top">
+                    <div class="col-sm-3">
+                        <h2 class="tittle-content-header">
+                            <i class="icon-location"></i> 
+                            <span style="font-size: 0.8em">地图运维
+                            </span>
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+            <!--/ TITLE -->
+
+            <!-- BREADCRUMB -->
+            <ul id="breadcrumb">
+                <li>
+                    <span class="entypo-home"></span>
+                </li>
+                <li><i class="fa fa-lg fa-angle-right"></i>
+                </li>
+                <li><a href="#" title="Sample page 1">首页</a>
+                </li>
+                <li><i class="fa fa-lg fa-angle-right"></i>
+                </li>
+                <li><a href="#" title="Sample page 1">轨迹查看</a>
+                </li>
+                <li class="pull-right">
+                    <div class="input-group input-widget">
+
+                        <input style="border-radius:15px" type="text" placeholder="Search..." class="form-control">
+                    </div>
+                </li>
+            </ul>
+
+            <!-- END OF BREADCRUMB -->
+
+
+
+
+
+
+
+
+            <div class="content-wrap">
+                <div class="row">
+
+
+                    <div class="col-sm-12">
+                        <div class="nest" id="GmapClose">
+                            <div class="title-alt">
+                                <h6>轨迹查询</h6>
+                            </div>
+
+                            <div style="padding:0;" class="body-nest" id="Gmap">
+
+
+
+                                <div id="test2" class="gmap" style="width:79.5%;height:500px;position:relative;display: inline-block">
+
+
+                                </div>
+                                <div class="RightTool">
+                                    <div class="TimeSelect" style="padding: 10px">
+                                        <div class="SelectTip" style="padding-left: 30%;padding-top: 40% ">
+                                            <button style="display: inline-block" onclick="TrailTime()">时间</button>
+                                            <button style="display: inline-block" onclick="TrailLicence()">车牌</button>
+                                        </div>
+                                        <div id="TimeSelect">
+                                            <div class="form-group">
+                                                <label>起始时间：</label>
+                                                <div class='input-group date' id='datetimepicker6'>
+                                                    <input type='text' class="form-control" id="TimeStart" placeholder="请选择起始时间"/>
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>结束时间：</label>
+                                                <div class='input-group date' id='datetimepicker7'>
+                                                    <input type='text' class="form-control" id="TimeEnd"  placeholder="请选择终止时间"/>
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                                <!--
+                                                    真实 数据
+                                                    <button class="btn btn-default" onclick="SelectByTime()">查询</button>
+                                                -->
+                                                <!-- 模拟时间数据获取 -->
+
+
+                                                <button class="btn btn-primary" onclick="SelectByTimeSimulation()" style="width: 100%">查询</button>
+                                        </div>
+                                        <div id="CarSelect" style="display: none;">
+                                            <div class="form-group">
+                                                <div style="padding: 5px;padding-bottom: 13px">
+                                                <label>司机车牌：</label>
+                                                <input type='text' class="form-control" id="licence" placeholder="请输入司机车牌号"/>
+                                                </div>
+                                                <div style="padding: 5px;padding-bottom: 13px">
+                                                <label>选择日期：</label>
+                                                    
+                                                    <select class="form-control">
+                                                        <option>今日</option>
+                                                        <option>昨日</option>
+                                                        <option>一周内</option>
+                                                        <option>一个月内</option>
+                                                    </select>
+                                                </div>
+                                                <button class="btn btn-primary" onclick="SelectByLicenceSimulation()" style="width: 100%">查询</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- /END OF CONTENT -->
+
+
+
+
+
+        </div>
+    </div>
+    <!--  END OF PAPER WRAP -->
+
+
+
+
+
+    <!-- MAIN EFFECT -->
+    <script type="text/javascript" src="assets/js/preloader.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/load.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+
+
+
+
+
+    <script type="text/javascript">
+
+    var map = new AMap.Map('test2', {
+        resizeEnable: true,
+        city:'杭州',
+        zoom: 2
+    });
+    $('#datetimepicker6').datetimepicker();
+    $('#datetimepicker7').datetimepicker();
+    $("#datetimepicker6").on("dp.change",function (e) {
+        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+    });
+    $("#datetimepicker7").on("dp.change",function (e) {
+        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+    });
+    function SelectByTimeSimulation(){
+        map.clearMap();
+        var StartTime=DateChange($("#TimeStart").val());
+        var EndTime=DateChange($("#TimeEnd").val());
+
+        $.ajax({
+            url:"http://127.0.0.2:88/car/json/time.php",
+            datatype:'json',
+            success:function(data){
+                //将字符串转化为JSON 数组
+                data=JSON.parse(data);
+
+
+                data.forEach(function(line){
+                    // 将JSON 转化成 字符串
+                    var str = JSON.stringify(line.lineArr);
+                    // 去掉"
+                    var lineArr = str.replace(/"/g, '');
+                    // 将字符串转化成JSON
+                    var lineArr2=JSON.parse(lineArr);
+
+                    console.log(lineArr2);
+
+
+                    var polyline = new AMap.Polyline({
+                        path: lineArr2,          //设置线覆盖物路径
+                        strokeColor: "#428bca", //线颜色
+                        strokeOpacity: 2,       //线透明度
+                        strokeWeight: 2,        //线宽
+                        strokeStyle: "solid",   //线样式
+                        strokeDasharray: [10, 5] //补充线样式
+                    });
+                    polyline.setMap(map);
+                    map.setFitView();
+
+
+
+
+
+
+                })
+            },
+            error:function(e){
+                alert(e);
+            }
+
+        })
+
+        console.log(StartTime);
+        console.log(EndTime);
+
+    }
+
+    // make the date MM/DD/YYYY -> YYYY-MM-DD
+    function DateChange(str){
+        var strarr=str.split(" ");  //将数组分为 MM-DD-YYYY HH:MM:SS PM
+        var date=strarr[0].split("/");  //存放MM-DD-YYYY
+        var mon=date[0];
+        var day=date[1];
+        var year=date[2];
+        var time=strarr[1].split(":");
+        var hour=time[0];
+        var minute=time[1];
+        var meridiem=strarr[2];
+        if(meridiem=="PM"){
+            hour=parseInt(hour);
+            hour=hour+12;
+        }
+        var DateTime=year+"-"+mon+"-"+day+" "+hour+":"+minute+":00";
+        return DateTime;
+    }
+
+    //single marker
+    function DisplayDataMapBySingle(marker,map){
+
+        mymarker=new AMap.Marker({
+            map: map,
+            icon: marker.icon,
+            position: [marker.position[0], marker.position[1]],
+            offset: new AMap.Pixel(-26, -13),
+            autoRotation: true,
+
+        });
+
+        var polyline = new AMap.Polyline({
+            map:map,
+        });
+        var passedPolyline = new AMap.Polyline({
+            map: map,
+            path: marker.lineArr,
+            strokeColor: "#F00",  //线颜色
+            strokeWeight: 3,      //线宽
+        });
+        mymarker.on('moving',function(e){
+            passedPolyline.setPath(e.passedPath);
+        })
+        map.setFitView();
+        mymarker.moveAlong(marker.lineArr, 1000);
+
+
+    }
+
+    // transfer the page
+    function TrailTime(){
+        $("#TimeSelect").css("display","block");
+        $("#CarSelect").css("display","none");
+    }
+    function TrailLicence(){
+        $("#TimeSelect").css("display","none");
+        $("#CarSelect").css("display","block");
+    }
+
+
+
+
+    //display the car's road  in the map1 map2 map3
+    function DisplayDataMap(markers,map){
+        markers.forEach(function(marker) {
+            //way to get car id
+            //var id=marker.id;
+            //console.log(id);
+            //
+            mymarker=new AMap.Marker({
+                map: map,
+                icon: marker.icon,
+                position: [marker.position[0], marker.position[1]],
+                offset: new AMap.Pixel(-26, -13),
+                autoRotation: true,
+
+            });
+
+            var polyline = new AMap.Polyline({
+                map:map,
+            });
+            var passedPolyline = new AMap.Polyline({
+                map: map,
+                path: marker.lineArr,
+                strokeColor: "#F00",  //线颜色
+                strokeWeight: 3,      //线宽
+            });
+            mymarker.on('moving',function(e){
+                passedPolyline.setPath(e.passedPath);
+            })
+            map.setFitView();
+            mymarker.moveAlong(marker.lineArr, 1000);
+
+        })
+    }
+    </script>
+
+
+
+</body>
+
+</html>
